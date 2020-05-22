@@ -6,8 +6,11 @@ var router = express.Router();
 //   res.render('index', { title: 'Express' });
 // });
 
-router.get('/', function (req, res) {
-    res.send({name: "Cody"})
+router.get('/users/:id', function (req, res) {
+    res.render('index', {
+      title: "Cody's Application",
+      content: req.params.id
+    })
 })
 
 module.exports = router;
